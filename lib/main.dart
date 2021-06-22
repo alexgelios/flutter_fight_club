@@ -22,94 +22,159 @@ class _MyHomePageState extends State<MyHomePage> {
   BodyPart? defendingBodyPart;
   BodyPart? attackingBodyPart;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(height: 40),
-          Row(
-            children: [
-              SizedBox(width: 16),
-              Expanded(child: Center(child: Text('You'))),
-              SizedBox(width: 12),
-              Expanded(child: Center(child: Text('Enemy'))),
-              SizedBox(width: 16),
-            ],
-          ),
-          Expanded(child: SizedBox()),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  children: [
-                    Text('Defend'.toUpperCase()),
-                    SizedBox(height: 13),
-                    BodyPartButton(
-                      bodyPart: BodyPart.head,
-                      selected: defendingBodyPart == BodyPart.head,
-                      bodyPartSetter: _selectDefendingBodyPart,
-                    ),
-                    SizedBox(height: 14),
-                    BodyPartButton(
-                      bodyPart: BodyPart.torso,
-                      selected: defendingBodyPart == BodyPart.torso,
-                      bodyPartSetter: _selectDefendingBodyPart,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  children: [
-                    Text('Attack'.toUpperCase()),
-                    SizedBox(height: 13),
-                    BodyPartButton(
-                      bodyPart: BodyPart.head,
-                      selected: attackingBodyPart == BodyPart.head,
-                      bodyPartSetter: _selectAttackingBodyPart,
-                    ),
-                    SizedBox(height: 14),
-                    BodyPartButton(
-                      bodyPart: BodyPart.torso,
-                      selected: attackingBodyPart == BodyPart.torso,
-                      bodyPartSetter: _selectAttackingBodyPart,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 16),
-            ],
-          ),
-          SizedBox(height: 14),
-          Row(
-            children: [
-              SizedBox(width: 16),
-              Expanded(
-                child: SizedBox(
-                  height: 40,
-                  child: ColoredBox(
-                    color: Color.fromRGBO(0, 0, 0, 0.87),
+      body: ColoredBox(
+        color: Color.fromRGBO(213, 222, 240, 1),
+        child: Column(
+          children: [
+            SizedBox(height: 59),
+            Row(
+              children: [
+
+                Expanded(
                     child: Center(
-                      child: Text(
-                        'Go'.toUpperCase(),
-                        style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 16,
-                            color: Colors.white),
+                        child: Text('You',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400, fontSize: 14)))),
+
+                Expanded(
+                    child: Center(
+                        child: Text('Enemy',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400, fontSize: 14)))),
+
+              ],
+            ),
+            SizedBox(height: 11),
+            Row(
+              children: [
+                Expanded(
+                    child: Center(
+                      child: Column(
+                        children: [
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                        ],
+                      ),
+                    )
+                ),
+                Expanded(
+                    child: Center(
+                      child: Column(
+                        children: [
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                          Text('1', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                          SizedBox(height: 4),
+                        ],
+                      ),
+                    )
+                ),
+              ],
+            ),
+            Expanded(child: SizedBox()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Text('Defend'.toUpperCase()),
+                      SizedBox(height: 14),
+                      BodyPartButton(
+                        bodyPart: BodyPart.head,
+                        selected: defendingBodyPart == BodyPart.head,
+                        bodyPartSetter: _selectDefendingBodyPart,
+                      ),
+                      SizedBox(height: 14),
+                      BodyPartButton(
+                        bodyPart: BodyPart.torso,
+                        selected: defendingBodyPart == BodyPart.torso,
+                        bodyPartSetter: _selectDefendingBodyPart,
+                      ),
+                      SizedBox(height: 14),
+                      BodyPartButton(
+                        bodyPart: BodyPart.legs,
+                        selected: defendingBodyPart == BodyPart.legs,
+                        bodyPartSetter: _selectDefendingBodyPart,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Text('Attack'.toUpperCase()),
+                      SizedBox(height: 14),
+                      BodyPartButton(
+                        bodyPart: BodyPart.head,
+                        selected: attackingBodyPart == BodyPart.head,
+                        bodyPartSetter: _selectAttackingBodyPart,
+                      ),
+                      SizedBox(height: 14),
+                      BodyPartButton(
+                        bodyPart: BodyPart.torso,
+                        selected: attackingBodyPart == BodyPart.torso,
+                        bodyPartSetter: _selectAttackingBodyPart,
+                      ),
+                      SizedBox(height: 14),
+                      BodyPartButton(
+                        bodyPart: BodyPart.legs,
+                        selected: attackingBodyPart == BodyPart.legs,
+                        bodyPartSetter: _selectAttackingBodyPart,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 16),
+              ],
+            ),
+            SizedBox(height: 14),
+            Row(
+              children: [
+                SizedBox(width: 16),
+                Expanded(
+                  child: SizedBox(
+                    height: 40,
+                    child: ColoredBox(
+                      color: Color.fromRGBO(0, 0, 0, 0.87),
+                      child: Center(
+                        child: Text(
+                          'Go'.toUpperCase(),
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                              color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(width: 16),
-            ],
-          ),
-          SizedBox(height: 40),
-        ],
+                SizedBox(width: 16),
+              ],
+            ),
+            SizedBox(height: 40),
+          ],
+        ),
       ),
     );
   }
@@ -134,6 +199,7 @@ class BodyPart {
 
   static const head = BodyPart._('Head');
   static const torso = BodyPart._('Torso');
+  static const legs = BodyPart._('Legs');
 
   @override
   String toString() {
@@ -160,10 +226,16 @@ class BodyPartButton extends StatelessWidget {
       child: SizedBox(
         height: 40,
         child: ColoredBox(
-          color:
-              selected ? const Color.fromRGBO(28, 121, 206, 1) : Colors.black26,
+          color: selected
+              ? const Color.fromRGBO(28, 121, 206, 1)
+              : Color.fromRGBO(0, 0, 0, 0.38),
           child: Center(
-            child: Text(bodyPart.name.toUpperCase()),
+            child: Text(bodyPart.name.toUpperCase(),
+                style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 13,
+                    color: Color.fromRGBO(6, 13, 20, 1))
+            ),
           ),
         ),
       ),
