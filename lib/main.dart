@@ -45,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Text('Enemy',
                             style: TextStyle(
                                 fontWeight: FontWeight.w400, fontSize: 14)))),
-
               ],
             ),
             SizedBox(height: 11),
@@ -153,17 +152,30 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 SizedBox(width: 16),
                 Expanded(
-                  child: SizedBox(
-                    height: 40,
-                    child: ColoredBox(
-                      color: Color.fromRGBO(0, 0, 0, 0.87),
-                      child: Center(
-                        child: Text(
-                          'Go'.toUpperCase(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                              color: Colors.white),
+                  child: GestureDetector(
+                    onTap: () {
+                      if (attackingBodyPart != null && defendingBodyPart != null
+                      ) {
+                        setState(() {
+                          attackingBodyPart = null;
+                          defendingBodyPart = null;
+                        });
+                      }
+                    },
+                    child: SizedBox(
+                      height: 40,
+                      child: ColoredBox(
+                        color: attackingBodyPart == null || defendingBodyPart == null ?
+                          Color.fromRGBO(0, 0, 0, 0.38)
+                        : Color.fromRGBO(0, 0, 0, 0.87),
+                        child: Center(
+                          child: Text(
+                            'Go'.toUpperCase(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16,
+                                color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
