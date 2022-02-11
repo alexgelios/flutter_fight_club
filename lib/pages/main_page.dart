@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fight_club/pages/fight_page.dart';
+import 'package:flutter_fight_club/pages/statistics_page.dart';
 import 'package:flutter_fight_club/resources/fight_club_colors.dart';
 import 'package:flutter_fight_club/widgets/action_button.dart';
+import 'package:flutter_fight_club/widgets/secondary_action_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainPage extends StatelessWidget {
@@ -43,6 +45,17 @@ class _MainPageContent extends StatelessWidget {
               },
             ),
             Expanded(child: SizedBox()),
+            SecondaryActionButton(
+              text: "Statistics",
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => StatisticsPage(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
             ActionButton(
               onTap: () {
                 Navigator.of(context).push(

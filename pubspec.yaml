@@ -19,6 +19,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+module:
+
+  androidX: true # Add this line.
 
 flutter:
 
